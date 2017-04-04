@@ -1,15 +1,26 @@
 {
-  "name": "vehicle-manager-frontend",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "angular": "^1.6.4",
-    "bootstrap": "^3.3.7",
-    "angular-ui-router": "^0.4.2"
-  }
+    "name": "vehicle-manager-frontend",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "^1.6.4",
+        "bootstrap": "^3.3.7",
+        "angular-ui-router": "^0.4.2"
+    },
+    "overrides": {
+        "font-awesome": {
+            "main": "css/font-awesome.css"
+        },
+        "bootstrap": {
+            "main": [
+                "dist/css/bootstrap.css",
+                "dist/js/bootstrap.js"
+            ]
+        }
+    }
 }

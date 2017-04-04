@@ -10,7 +10,7 @@
         ])
         .value('apiUrl', 'http://localhost:21566/api/')
         .config(function($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/dashboard.html');
+            $urlRouterProvider.otherwise('/dashboard');
         });
 
         // Configure each one of our states
