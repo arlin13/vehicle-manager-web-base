@@ -14,7 +14,10 @@
         activate();
 
         function activate() {
-
+            vehiclesFactory
+                .getAll().then(function(vehicles) {
+                    vm.vehicles = vehicles;
+                });
         }
     }
 })();

@@ -35,6 +35,22 @@
                     controller: 'CustomerDetailController as customerDetailCtrl',
                     templateUrl: 'app/customers/customers.detail.html'
                 });
+            $stateProvider
+                .state('vehicles', {
+                    url: '/vehicles',
+                    abstract: true,
+                    template: '<div ui-view></div>'
+                })
+                .state('vehicles.grid', {
+                    url: '/grid',
+                    controller: 'VehicleGridController as vehicleGridCtrl',
+                    templateUrl: 'app/vehicles/vehicles.grid.html'
+                })
+                .state('vehicles.detail', {
+                    url: '/detail/:id',
+                    controller: 'VehicleDetailController as vehicleDetailCtrl',
+                    templateUrl: 'app/vehicles/vehicles.detail.html'
+                });
         });
 
 

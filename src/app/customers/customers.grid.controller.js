@@ -14,9 +14,10 @@
         activate();
 
         function activate() {
-          customersFactory.getAll().then(function(customers) {
-            vm.customers = customers;
-          });
+            customersFactory
+                .getAll().then(function(customers) {
+                    vm.customers = customers;
+                });
         }
     }
 })();
