@@ -5,10 +5,10 @@
         .module('app.vehicles')
         .controller('VehiclesDetailController', VehiclesDetailController);
 
-    CustomersDetailController.$inject = ['vehiclesFactory'];
+    VehiclesDetailController.$inject = ['vehiclesFactory'];
 
     /* @ngInject */
-    function CustomersDetailController(vehiclesFactory) {
+    function VehiclesDetailController(vehiclesFactory) {
         var vm = this;
 
         activate();
