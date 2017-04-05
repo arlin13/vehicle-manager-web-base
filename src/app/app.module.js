@@ -4,6 +4,8 @@
     angular
         .module('app', [
             'ui.router',
+            'oitozero.ngSweetAlert',
+            // 'ng-sweet-alert',
             'app.dashboard',
             'app.customers',
             'app.vehicles',
@@ -19,7 +21,8 @@
                     url: '/dashboard',
                     controller: 'DashboardController as dashboardCtrl',
                     templateUrl: 'app/dashboard/dashboard.html'
-                })
+                });
+            $stateProvider
                 .state('customers', {
                     url: '/customers',
                     abstract: true,
@@ -51,7 +54,21 @@
                     controller: 'VehicleDetailController as vehicleDetailCtrl',
                     templateUrl: 'app/vehicles/vehicles.detail.html'
                 });
+            $stateProvider
+                .state('sales', {
+                    url: '/sales',
+                    abstract: true,
+                    template: '<div ui-view></div>'
+                })
+                .state('sales.grid', {
+                    url: '/grid',
+                    controller: 'SaleGridController as saleGridCtrl',
+                    templateUrl: 'app/sales/sales.grid.html'
+                })
+                .state('sales.detail', {
+                    url: '/detail/:id',
+                    controller: 'SaleDetailController as saleDetailCtrl',
+                    templateUrl: 'app/sales/sales.detail.html'
+                });
         });
-
-
 })();

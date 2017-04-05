@@ -3,22 +3,38 @@
 
     angular
         .module('app.customers')
-        .controller('CustomersDetailController', CustomersDetailController);
+        .controller('CustomerDetailController', CustomerDetailController);
 
-    CustomersDetailController.$inject = ['customersFactory', '$stateParams'];
+    CustomerDetailController.$inject = ['customersFactory', 'SweetAlert', '$stateParams'];
 
     /* @ngInject */
-    function CustomersDetailController(customersFactory, stateParams) {
+    function CustomerDetailController(customersFactory, SweetAlert, $stateParams) {
         var vm = this;
+
+        vm.save = save;
 
         activate();
 
         function activate() {
-          customersFactory
-            .getById($stateParams.id)
-            .then(function(customer) {
-              vm.customer = customer;
-            });
+            customersFactory
+                .getById($stateParams.id)
+                .then(function(customer) {
+                    vm.customer = customer;
+                })
+                .catch(function(error) {
+                    alert(error);
+                });
+        }
+
+        function save() {
+            customersFactory
+                .update(vm.customer.customerId, vm.customer)
+                .then(function() {
+                    SweetAlert.swal("Customer saved!", `$customer.firstName`, "success");
+                })
+                .catch(function(error) {
+                    alert(error);
+                });
         }
     }
 })();

@@ -1,5 +1,9 @@
 #container{
-  width:90%;
+  width:95%;
   margin: 0 auto;
-  background-color: pink;
+}
+
+#partialView{
+  padding: 20px 10px;
+  /*background-color: red;*/
 }
