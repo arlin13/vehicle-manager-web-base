@@ -1,0 +1,42 @@
+-- CUSTOMERS --
+[X] Grid
+	[X] Add index td
+	[] Edit
+	[] Delete
+	[] Order By to all columns
+	[] Search bar
+	[] Add number row (index)
+	[] Add stripped class table
+[] Edit
+[] Add
+
+-- VEHICLES--
+[X] Grid
+	[X] Add index td
+	[] Edit
+	[] Delete
+	[] Order By to all columns
+	[] Search bar
+	[] Add number row (index)
+	[] Add stripped class table
+	[X] Money format to Sale Price
+[] Edit
+[] Add
+
+-- SALES--
+[] Grid
+	[X] Add index td
+	[] Edit
+	[] Delete
+	[] Order By to all columns
+	[] Search bar
+	[] Add number row (index)
+	[] Add stripped class table
+	[X] Money format to Sale Price
+	[X] Date format to Payment Date and Invoice Date
+	[X] Show customer name
+	[X] Show vehicle sold
+[] Details/Edit
+	[] Date picker control for payment date
+	[] Date picker control for invoice date
+[] Add

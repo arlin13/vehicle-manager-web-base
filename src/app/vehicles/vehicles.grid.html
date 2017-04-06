@@ -1,27 +1,30 @@
-<h1>VEHICLES GRID</h1>
+<p class="subtitle">V E H I C L E S</p>
+<hr>
 <table class="table table-stripped">
   <thead>
     <tr>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Year</th>
-      <th>Color</th>
-      <th>Vehicle Type</th>
-      <th>Retail Price</th>
+      <th></th>
+      <th><p class="theader">MAKE</p></th>
+      <th><p class="theader">MODEL</p></th>
+      <th><p class="theader">YEAR</p></th>
+      <th><p class="theader">COLOR</p></th>
+      <th><p class="theader">VEHICLE TYPE</p></th>
+      <th><p class="theader">RETAIL PRICE</p></th>
       <th width="1%"></th>
       <th width="1%"></th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="vehicle in vehicleGridCtrl.vehicles">
-      <td>{{vehicle.make}}</td>
-      <td>{{vehicle.model}}</td>
-      <td>{{vehicle.year}}</td>
-      <td>{{vehicle.color}}</td>
-      <td>{{vehicle.vehicleType}}</td>
-      <td>{{vehicle.retailPrice}}</td>
+      <td><p class="tdata">{{$index+1}}</p></td>
+      <td><p class="tdata">{{vehicle.make}}</p></td>
+      <td><p class="tdata">{{vehicle.model}}</p></td>
+      <td><p class="tdata">{{vehicle.year}}</p></td>
+      <td><p class="tdata">{{vehicle.color}}</p></td>
+      <td><p class="tdata">{{vehicle.vehicleType}}</p></td>
+      <td><p class="tdata">{{vehicle.retailPrice | currency:"$"}}</p></td>
       <td>
-        <a ui-sref="vehicles.detail({id:1})" class="btn btn-primary"> //CAHNGE THISSS
+        <a ui-sref="vehicles.detail({id:1})" class="btn btn-primary">
           <i class="glyphicon glyphicon-edit"></i>
         </a>
       </td>

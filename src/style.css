@@ -1,9 +1,29 @@
-#container{
-  width:95%;
-  margin: 0 auto;
+#container {
+    width: 95%;
+    margin: 0 auto;
 }
 
-#partialView{
-  padding: 20px 10px;
-  /*background-color: red;*/
+#partialView {
+    padding: 20px 10px;
+    /*background-color: red;*/
+}
+
+.subtitle {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.theader {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin: 2px 0;
+}
+
+.tdata {
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
 }

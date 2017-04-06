@@ -36,12 +36,12 @@
                 },
                 function(isConfirm) {
                     if (isConfirm) {
-                      customersFactory
-                      .remove(customer.customerId)
-                      .then(function() {
-                        SweetAlert.swal("Deleted!", `Customer ${customer.firstName} has been deletered`, "success");
-                        vm.customers.splice(vm.customers.indexOf(customer), 1);                        
-                      });
+                        customersFactory
+                            .remove(customer.customerId)
+                            .then(function() {
+                                SweetAlert.swal("Deleted!", `Customer ${customer.firstName} has been deletered`, "success");
+                                vm.customers.splice(vm.customers.indexOf(customer), 1);
+                            });
                     } else {
                         SweetAlert.swal("Cancelled", `${customer.firstName} NOT deleted`, "error");
                     }

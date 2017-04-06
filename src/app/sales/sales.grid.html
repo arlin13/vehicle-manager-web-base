@@ -1,1 +1,36 @@
-<h1>SALES GRID</h1>
+<p class="subtitle">S A L E S</p>
+<hr>
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th></th>
+      <th><p class="theader">CUSTOMER NAME</p></th>
+      <th><p class="theader">VEHICLE</p></th>
+      <th><p class="theader">SALE PRICE</p></th>
+      <th><p class="theader">INVOICE DATE</p></th>
+      <th><p class="theader">PAYMENT DATE</p></th>
+      <th width="1%"></th>
+      <th width="1%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="sale in saleGridCtrl.sales">
+      <td><p class="tdata">{{$index+1}}</p></td>
+      <td><p class="tdata">{{sale.customerName}}</p></td>
+      <td><p class="tdata">{{sale.vehicleName}}</p></td>
+      <td><p class="tdata">{{sale.salePrice | currency:"$"}}</p></td>
+      <td><p class="tdata">{{sale.invoiceDate | date:'MM/dd/yyyy'}}</p></td>
+      <td><p class="tdata">{{sale.paymentReceivedDate | date:'MM/dd/yyyy'}}</p></td>
+      <td>
+        <a ui-sref="sales.detail({id:2})" class="btn btn-primary">
+          <i class="glyphicon glyphicon-edit"></i>
+        </a>
+      </td>
+      <td>
+        <a ng-click="saleGridCtrl.remove(sale)" class="btn btn-danger">
+          <i class="glyphicon glyphicon-trash"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
