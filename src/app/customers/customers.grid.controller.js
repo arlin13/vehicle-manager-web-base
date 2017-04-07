@@ -10,7 +10,9 @@
     /* @ngInject */
     function CustomerGridController(SweetAlert, customersFactory) {
         var vm = this;
+        vm.addElementDiv = false;
 
+        vm.addElement = addElement;
         vm.remove = remove;
 
         activate();
@@ -20,6 +22,10 @@
                 .getAll().then(function(customers) {
                     vm.customers = customers;
                 });
+        }
+
+        function addElement() {
+          vm.addElementDiv = !vm.addElementDiv;
         }
 
         function remove(customer) {

@@ -1,1 +1,44 @@
-<h1>SALES DETAILS</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{saleDetailCtrl.title}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="customerName">Customer</label>
+                    <input id="customerName" type="text" class="form-control" ng-model="saleDetailCtrl.sale.customerName">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="vehicle">Vehicle</label>
+                    <input id="vehicle" type="text" class="form-control" ng-model="saleDetailCtrl.sale.vehicleName">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="salePrice">Sale Price</label>
+                    <input id="salePrice" type="number" step="0.01" class="form-control" ng-model="saleDetailCtrl.sale.salePrice">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="invoiceDate">Invoice Date</label>
+                    <input id="invoiceDate" type="date" class="form-control" ng-model="saleDetailCtrl.sale.invoiceDate">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="paymentReceivedDate">Payment Received Date</label>
+                    <input id="paymentReceivedDate" type="date" class="form-control" ng-model="saleDetailCtrl.sale.paymentReceivedDate">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer clearfix">
+      <button class="btn btn-success pull-right" ng-click="saleDetailCtrl.save()">
+        Save <i class="glyphicon glyphicon-save"></i>
+      </button>
+    </div>
+</div>

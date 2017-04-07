@@ -1,38 +1,69 @@
 <p class="subtitle">V E H I C L E S</p>
 <hr>
-<table class="table table-stripped">
-  <thead>
-    <tr>
-      <th></th>
-      <th><p class="theader">MAKE</p></th>
-      <th><p class="theader">MODEL</p></th>
-      <th><p class="theader">YEAR</p></th>
-      <th><p class="theader">COLOR</p></th>
-      <th><p class="theader">VEHICLE TYPE</p></th>
-      <th><p class="theader">RETAIL PRICE</p></th>
-      <th width="1%"></th>
-      <th width="1%"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="vehicle in vehicleGridCtrl.vehicles">
-      <td><p class="tdata">{{$index+1}}</p></td>
-      <td><p class="tdata">{{vehicle.make}}</p></td>
-      <td><p class="tdata">{{vehicle.model}}</p></td>
-      <td><p class="tdata">{{vehicle.year}}</p></td>
-      <td><p class="tdata">{{vehicle.color}}</p></td>
-      <td><p class="tdata">{{vehicle.vehicleType}}</p></td>
-      <td><p class="tdata">{{vehicle.retailPrice | currency:"$"}}</p></td>
-      <td>
-        <a ui-sref="vehicles.detail({id:1})" class="btn btn-primary">
-          <i class="glyphicon glyphicon-edit"></i>
-        </a>
-      </td>
-      <td>
-        <a href="" class="btn btn-danger">
-          <i class="glyphicon glyphicon-trash"></i>
-        </a>
-      </td>
-    </tr>
-  </tbody>
+
+<button ui-sref="vehicles.detail" class="btn btn-primary pull-right">
+  <i class="glyphicon glyphicon-plus"></i> Add Sale
+</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                <p class="theader">MAKE</p>
+            </th>
+            <th>
+                <p class="theader">MODEL</p>
+            </th>
+            <th>
+                <p class="theader">YEAR</p>
+            </th>
+            <th>
+                <p class="theader">COLOR</p>
+            </th>
+            <th>
+                <p class="theader">VEHICLE TYPE</p>
+            </th>
+            <th>
+                <p class="theader">RETAIL PRICE</p>
+            </th>
+            <th width="1%"></th>
+            <th width="1%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="vehicle in vehicleGridCtrl.vehicles">
+            <td>
+                <p class="tdata">{{$index+1}}</p>
+            </td>
+            <td>
+                <p class="tdata">{{vehicle.make}}</p>
+            </td>
+            <td>
+                <p class="tdata">{{vehicle.model}}</p>
+            </td>
+            <td>
+                <p class="tdata">{{vehicle.year}}</p>
+            </td>
+            <td>
+                <p class="tdata">{{vehicle.color}}</p>
+            </td>
+            <td>
+                <p class="tdata">{{vehicle.vehicleType}}</p>
+            </td>
+            <td>
+                <p class="tdata">{{vehicle.retailPrice | currency:"$"}}</p>
+            </td>
+            <td>
+                <a ui-sref="vehicles.detail({id:vehicle.vehicleId})" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+            </td>
+            <td>
+                <a ng-click="vehicleGridCtrl.remove(vehicle)" class="btn btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
 </table>

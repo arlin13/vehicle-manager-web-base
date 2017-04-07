@@ -1,34 +1,71 @@
 <p class="subtitle">C U S T O M E R S</p>
 <hr>
-<table class="table table-stripped">
-  <thead>
-    <tr>
-      <th></th>
-      <th><p class="theader">FIRST NAME</p></th>
-      <th><p class="theader">LAST NAME</p></th>
-      <th><p class="theader">EMAIL</p></th>
-      <th><p class="theader">TELEPHONE</p></th>
-      <th width="1%"></th>
-      <th width="1%"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="customer in customerGridCtrl.customers">
-      <td><p class="tdata">{{$index+1}}</p></td>
-      <td><p class="tdata">{{customer.firstName}}</p></td>
-      <td><p class="tdata">{{customer.lastName}}</p></td>
-      <td><p class="tdata">{{customer.email}}</p></td>
-      <td><p class="tdata">{{customer.phone}}</p></td>
-      <td>
-        <a ui-sref="customers.detail({id:2})" class="btn btn-primary">
-          <i class="glyphicon glyphicon-edit"></i>
-        </a>
-      </td>
-      <td>
-        <a ng-click="customerGridCtrl.remove(customer)" class="btn btn-danger">
-          <i class="glyphicon glyphicon-trash"></i>
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+<button ui-sref="customers.detail" class="btn btn-primary pull-right">
+  <i class="glyphicon glyphicon-plus"></i> Add Customer
+</button>
+
+<!-- <div class="newElementDiv margin">
+    <a class="pull-right" href="" ng-click="customerGridCtrl.addElement()">+ Add customer</a>
+    <div class="panel panel-primary" ng-show="customerGridCtrl.addElementDiv">
+      <div class="panel-heading">
+        Add customer
+      </div>
+      <div class="panel-body">
+
+      </div>
+    </div>
+</div> -->
+
+<div class="dataTable margin">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    <p class="theader">FIRST NAME</p>
+                </th>
+                <th>
+                    <p class="theader">LAST NAME</p>
+                </th>
+                <th>
+                    <p class="theader">EMAIL</p>
+                </th>
+                <th>
+                    <p class="theader">TELEPHONE</p>
+                </th>
+                <th width="1%"></th>
+                <th width="1%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="customer in customerGridCtrl.customers">
+                <td>
+                    <p class="tdata">{{$index+1}}</p>
+                </td>
+                <td>
+                    <p class="tdata">{{customer.firstName}}</p>
+                </td>
+                <td>
+                    <p class="tdata">{{customer.lastName}}</p>
+                </td>
+                <td>
+                    <p class="tdata">{{customer.email}}</p>
+                </td>
+                <td>
+                    <p class="tdata">{{customer.phone}}</p>
+                </td>
+                <td>
+                    <a ui-sref="customers.detail({id:customer.customerId})" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="customerGridCtrl.remove(customer)" class="btn btn-danger">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

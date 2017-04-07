@@ -10,31 +10,47 @@
     /* @ngInject */
     function CustomerDetailController(customersFactory, SweetAlert, $stateParams) {
         var vm = this;
-
+        vm.title = "New Customer";
         vm.save = save;
 
         activate();
 
         function activate() {
-            customersFactory
-                .getById($stateParams.id)
-                .then(function(customer) {
-                    vm.customer = customer;
-                })
-                .catch(function(error) {
-                    alert(error);
-                });
+            var customerId = $stateParams.id;
+            if (customerId) {
+                vm.title = "Edit costumer";
+                customersFactory
+                    .getById($stateParams.id)
+                    .then(function(customer) {
+                        vm.customer = customer;
+                    })
+                    .catch(function(error) {
+                        console.error(error);
+                    });
+            }
         }
 
         function save() {
-            customersFactory
-                .update(vm.customer.customerId, vm.customer)
-                .then(function() {
-                    SweetAlert.swal("Customer saved!", `$customer.firstName`, "success");
-                })
-                .catch(function(error) {
-                    alert(error);
-                });
+            var customerId = $stateParams.id;
+            if (customerId) {
+                customersFactory
+                    .update(vm.customer.customerId, vm.customer)
+                    .then(function() {
+                        SweetAlert.swal("Customer saved!", `$vm.customer.firstName`, "success");
+                    })
+                    .catch(function(error) {
+                        console.error(error);
+                    });
+            } else {
+                customersFactory
+                    .create(vm.customer)
+                    .then(function() {
+                        SweetAlert.swal("Customer saved!", "Awesome!", "success");
+                    })
+                    .catch(function(error) {
+                        console.error(error);
+                    });
+            }
         }
     }
 })();

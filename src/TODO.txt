@@ -1,12 +1,12 @@
 -- CUSTOMERS --
 [X] Grid
 	[X] Add index td
-	[] Edit
-	[] Delete
+	[X] Edit
+	[X] Delete
 	[] Order By to all columns
 	[] Search bar
-	[] Add number row (index)
-	[] Add stripped class table
+	[X] Add number row (index)
+	[X] Add stripped class table
 [] Edit
 [] Add
 
@@ -17,7 +17,7 @@
 	[] Delete
 	[] Order By to all columns
 	[] Search bar
-	[] Add number row (index)
+	[X] Add number row (index)
 	[] Add stripped class table
 	[X] Money format to Sale Price
 [] Edit
@@ -30,7 +30,7 @@
 	[] Delete
 	[] Order By to all columns
 	[] Search bar
-	[] Add number row (index)
+	[X] Add number row (index)
 	[] Add stripped class table
 	[X] Money format to Sale Price
 	[X] Date format to Payment Date and Invoice Date

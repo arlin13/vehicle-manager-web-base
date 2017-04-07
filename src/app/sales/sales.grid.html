@@ -1,6 +1,11 @@
 <p class="subtitle">S A L E S</p>
 <hr>
-<table class="table table-stripped">
+
+<button ui-sref="sales.detail" class="btn btn-primary pull-right">
+  <i class="glyphicon glyphicon-plus"></i> Add Sale
+</button>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th></th>
@@ -19,10 +24,10 @@
       <td><p class="tdata">{{sale.customerName}}</p></td>
       <td><p class="tdata">{{sale.vehicleName}}</p></td>
       <td><p class="tdata">{{sale.salePrice | currency:"$"}}</p></td>
-      <td><p class="tdata">{{sale.invoiceDate | date:'MM/dd/yyyy'}}</p></td>
-      <td><p class="tdata">{{sale.paymentReceivedDate | date:'MM/dd/yyyy'}}</p></td>
+      <td><p class="tdata">{{sale.invoiceDate | date}}</p></td>
+      <td><p class="tdata">{{sale.paymentReceivedDate | date}}</p></td>
       <td>
-        <a ui-sref="sales.detail({id:2})" class="btn btn-primary">
+        <a ui-sref="sales.detail({id:sale.saleId})" class="btn btn-primary">
           <i class="glyphicon glyphicon-edit"></i>
         </a>
       </td>

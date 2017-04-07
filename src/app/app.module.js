@@ -5,7 +5,6 @@
         .module('app', [
             'ui.router',
             'oitozero.ngSweetAlert',
-            // 'ng-sweet-alert',
             'app.dashboard',
             'app.customers',
             'app.vehicles',
