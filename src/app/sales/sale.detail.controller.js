@@ -5,10 +5,10 @@
         .module('app.sales')
         .controller('SaleDetailController', SaleDetailController);
 
-    SaleDetailController.$inject = ['salesFactory', 'SweetAlert', '$stateParams'];
+    SaleDetailController.$inject = ['salesFactory', 'customersFactory', 'vehiclesFactory', 'SweetAlert', '$stateParams'];
 
     /* @ngInject */
-    function SaleDetailController(salesFactory, SweetAlert, $stateParams) {
+    function SaleDetailController(salesFactory, customersFactory, vehiclesFactory, SweetAlert, $stateParams) {
         var vm = this;
         vm.title = "New sale";
         vm.save = save;
@@ -17,6 +17,14 @@
 
         function activate() {
             var saleId = $stateParams.id;
+
+            customersFactory.getAll().then(function(customers) {
+                vm.customers = customers;
+            });
+            vehiclesFactory.getAll().then(function(vehicles) {
+                vm.vehicles = vehicles;
+            });
+
             if (saleId) {
                 vm.title = "Edit sale";
                 salesFactory
@@ -32,6 +40,10 @@
 
         function save() {
             var saleId = $stateParams.id;
+
+            vm.sale.customerId = vm.selectedCustomer.customerId;
+            vm.sale.vehicleId = vm.selectedVehicle.vehicleId;
+
             if (saleId) {
                 salesFactory
                     .update(vm.sale.saleId, vm.sale)

@@ -4,13 +4,15 @@
     angular
         .module('app', [
             'ui.router',
+            'ui.select',
+            'ngSanitize',
             'oitozero.ngSweetAlert',
             'app.dashboard',
             'app.customers',
             'app.vehicles',
             'app.sales'
         ])
-        .value('apiUrl', 'http://localhost:21566/api/')
+        .value('apiUrl', 'https://ag-vehicle-api.azurewebsites.net/api/')
         .config(function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/dashboard');
 

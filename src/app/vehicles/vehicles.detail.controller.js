@@ -19,7 +19,7 @@
             var vehicleId = $stateParams.id;
             if (vehicleId) {
                 vm.title = "Edit vehicle";
-                salesFactory
+                vehiclesFactory
                     .getById(vehicleId)
                     .then(function(vehicle) {
                         vm.vehicle = vehicle;
