@@ -36,7 +36,7 @@
                 customersFactory
                     .update(vm.customer.customerId, vm.customer)
                     .then(function() {
-                        SweetAlert.swal("Customer saved!", `$vm.customer.firstName`, "success");
+                        SweetAlert.swal("Customer saved!", `${vm.customer.firstName}`, "success");
                     })
                     .catch(function(error) {
                         console.error(error);

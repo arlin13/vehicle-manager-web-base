@@ -22,6 +22,7 @@
                 vehiclesFactory
                     .getById(vehicleId)
                     .then(function(vehicle) {
+                      console.log(vehicle);
                         vm.vehicle = vehicle;
                     })
                     .catch(function(error) {
@@ -33,16 +34,16 @@
         function save() {
             var vehicleId = $stateParams.id;
             if (vehicleId) {
-                vehicleFactory
+                vehiclesFactory
                     .update(vm.vehicle.vehicleId, vm.vehicle)
                     .then(function() {
-                        SweetAlert.swal("Vehicle saved!", "Great!", "success");
+                        SweetAlert.swal("Vehicle saved!", `${vm.vehicle.make}` + " " + `${vm.vehicle.model}`, "success");
                     })
                     .catch(function(error) {
                         console.error(error);
                     });
             } else {
-                vehicleFactory
+                vehiclesFactory
                     .create(vm.vehicle)
                     .then(function() {
                         SweetAlert.swal("Vehicle saved!", "Awesome!", "success");
